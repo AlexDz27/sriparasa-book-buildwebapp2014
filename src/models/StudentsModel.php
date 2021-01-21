@@ -6,8 +6,7 @@ class StudentsModel extends BaseModel {
   }
 
   public function getStudents() {
-    return $this->db->query("SELECT student_id, first_name, last_name 
-      FROM students")->fetchAll(PDO::FETCH_ASSOC);
+    return $this->db->query("SELECT * FROM students")->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function addStudent($student): string {

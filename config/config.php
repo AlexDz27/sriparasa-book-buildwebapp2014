@@ -1,7 +1,7 @@
 <?php
 
 define('LIBRARY', 'lib/');
-define('BASE_URL', 'http://student-portal.local/');
+define('BASE_URL', 'http://student-portal.local');
 
 define('DB_VENDOR', 'mysql');
 define('DB_HOST', 'localhost');
