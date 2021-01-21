@@ -25,7 +25,7 @@ class Bootstrap {
     if (!file_exists($fileName)) {
       // replace the message
       // redirect user to custom 404 page
-      echo "File does not exist";
+      echo 'File does not exist';
 
       return false;
     }
@@ -33,15 +33,15 @@ class Bootstrap {
     require_once $fileName;
     $controller = new $controllerName;
 
-    if (empty($uri[1])) {
+    $actionName = $uri[1] ?? null;
+
+    if ($actionName === null) {
       $controller->get();
 
       return false;
     }
-
-    $actionName = isset($uri[1]) ? $uri[1] : null;
-
-    if ($actionName && method_exists($controller, $actionName)) {
+    
+    if (method_exists($controller, $actionName)) {
       if (empty($uri[2])) {
         $controller->{$uri[1]}();
       } else {
@@ -51,7 +51,7 @@ class Bootstrap {
       // should be logged
       // replace the message
       // redirect the user to custom 404 page
-      echo "Action does not exist";
+      echo 'Action does not exist';
     }
   }
 }
