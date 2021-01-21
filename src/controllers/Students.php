@@ -39,6 +39,8 @@ class Students extends BaseController {
     header('Content-Type:application/csv');
 
     readfile(PROJECT_DIR . '/public/assets/files/students.csv');
+
+    $this->logger->info('Students CSV file has been successfully exported.');
   }
 
   public function import() {

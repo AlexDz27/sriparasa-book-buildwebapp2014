@@ -6,6 +6,7 @@ abstract class BaseController {
 
   public function __construct() {
     $this->view = new BaseView();
+    $this->logger = new Logger();
   }
 
   public function loadModel($name) {

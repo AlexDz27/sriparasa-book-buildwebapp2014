@@ -12,3 +12,4 @@ define('DB_PWD', 'root');
 // My constants
 define('PROJECT_DIR', dirname(__DIR__));
 define('SRC_DIR', PROJECT_DIR . '/src');
+define('LOGS_DIR', PROJECT_DIR . '/logs');
