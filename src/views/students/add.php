@@ -1,7 +1,10 @@
-<div id="addStudent">
-  <!-- TODO: mb do it somehow better  -->
-  <?= isset($this->id) ? 'New user has been added.' : '' ?>
-</div>
+<?php if (isset($_SESSION['new_user_id'])): ?>
+  <p id="addStudent">New user has been successfully added!</p>
+
+  <?php
+    unset($_SESSION['new_user_id']);
+  ?>
+<?php endif; ?>
 
 <form class="Frm" action="add" method="post">
   <ul>
