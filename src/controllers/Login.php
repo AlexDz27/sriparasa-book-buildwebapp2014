@@ -4,7 +4,6 @@ class Login extends BaseController {
   public function __construct() {
     parent::__construct();
 
-    Session::init();
     $this->loadModel('Login');
   }
 

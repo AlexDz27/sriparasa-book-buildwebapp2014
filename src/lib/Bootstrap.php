@@ -4,6 +4,8 @@
 
 class Bootstrap {
   public function __construct() {
+    Session::init();
+
     $uri = ltrim($_SERVER['REQUEST_URI'], '/');
     $uri = explode('/', $uri);
 

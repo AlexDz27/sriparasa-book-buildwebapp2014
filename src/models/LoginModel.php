@@ -6,7 +6,7 @@ class LoginModel extends BaseModel {
   }
 
   public function login($username, $password) {
-    $stmt = $this->db->prepare("SELECT username FROM students WHERE username = :username 
+    $stmt = $this->db->prepare("SELECT student_id, username FROM students WHERE username = :username 
       AND password = :password");
 
     $stmt->execute([':username' => $username, ':password' => sha1($password)]);

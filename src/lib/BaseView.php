@@ -1,6 +1,9 @@
 <?php
 
 class BaseView {
+  public $student_id;
+  public $role;
+
   public function __construct() {}
 
   public function render($name) {

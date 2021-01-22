@@ -2,7 +2,7 @@
   <p id="registerStudentCourse">Student has been successfully registered for the course!</p>
 
   <?php
-  unset($_SESSION['is_new_students_courses_created']);
+    unset($_SESSION['is_new_students_courses_created']);
   ?>
 <?php endif; ?>
 
@@ -14,7 +14,12 @@
     </li>
     <li>
       <label>Student Id</label>
-      <textarea name="student_id" placeholder="Enter Student Id"></textarea>
+      <?php if ($this->role !== 'student'): ?>
+        <input name="student_id" placeholder="Enter Student Id">
+      <?php else: ?>
+        <label><?= $this->student_id ?></label>
+        <input name="student_id" type="hidden" value="<?= $this->student_id ?>">
+      <?php endif; ?>
     </li>
     <li>
       <button type="submit" name="submit">Register Student for course</button>

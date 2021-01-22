@@ -26,6 +26,12 @@ class StudentsCourses extends BaseController {
       die();
     }
 
+    $role = Session::get('role');
+    if ($role === 'student') {
+      $this->view->student_id = Session::get('student_id');
+    }
+    $this->view->role = $role ?? '';
+
     $this->view->render('studentsCourses/register');
   }
 }
