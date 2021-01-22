@@ -1,3 +1,7 @@
+<?php
+  var_dump($_SESSION);
+?>
+
 <h1>Login</h1>
 
 <?= "Username of the current user: {$this->username}<br>" ?>
@@ -12,6 +16,10 @@
     <li>
       <label>Password</label>
       <input name="password" type="password" placeholder="Enter Password">
+    </li>
+    <li>
+      <label>Admin Login</label>
+      <input type="checkbox" name="isAdmin">
     </li>
     <li>
       <button type="submit" name="submit">Login</button>

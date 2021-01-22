@@ -19,8 +19,9 @@ class Login extends BaseController {
   public function login() {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $type = isset($_POST['isAdmin']) ? 'admin' : 'student';
 
-    $this->model->login($username, $password);
+    $this->model->login($username, $password, $type);
   }
 
   public function logout() {
